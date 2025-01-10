@@ -7,7 +7,7 @@ const NavbarComponent = () => {
                 <div className=" flex flex-row justify-between lg:justify-evenly items-center px-4 lg:px-8">
                     <div className="max-w-2xl flex items-center">
                         <h1 className="font-bold text-xl w-full ">
-                            <a href="/">LONG SREYLY</a>
+                            <a href="/">SRUN LISA</a>
                         </h1>
                     </div>
                     <nav className="lg:flex hidden">
