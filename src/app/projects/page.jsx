@@ -5,13 +5,13 @@ const ProjectPage = () => {
     const project = [
         {
             image : "/langNet.png",
-            link: "https://langnet.info/",
+            link: "https://langnet.netlify.app/",
             title: "LangNet | Web Application",
             paragraph: "A LangNet design using NextJs with Rest APIs."
         },
         {   
             image : "/movies.png",
-            link: "https://movie-legend-git-main-sreyly-long.vercel.app/",
+            link: "https://movie-legend-24h.firebaseapp.com/",
             title: "Movie  | Web Application",
             paragraph: "A movie desing dynamic web page using ReactJs with Rest APIs."
         },
@@ -53,7 +53,7 @@ const ProjectPage = () => {
                         {
                             project.map((data) => (
                                 <div class="w-60 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
-                                    <Link className="absolute inset-0 z-10" href={data.link}>
+                                    <Link className="absolute inset-0 z-10" href={data.link} target='_blank' rel="noopener noreferrer">
                                         <span className="sr-only">View Project</span>
                                     </Link>
                                     <img  className="object-cover w-60 h-50 md:h-52 lg:h-56 group-hover:scale-105 transition-all duration-300 color: transparent; aspect-ratio: 600 / 400; object-fit: cover;" alt="No Picture" loading="lazy" decoding="async" data-nimg="1"  src={data.image}/>

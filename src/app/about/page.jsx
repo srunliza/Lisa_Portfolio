@@ -39,7 +39,7 @@ const AboutMePage = () => {
                         <h1 className="from-purple-500 via-indigo-500 to-purple-500 bg-clip-text  text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                             <TypeAnimation
                                 sequence={[
-                                    'LONG SREYLY',
+                                    'SRUN LISA',
                                     1000,
 
                                 ]}
@@ -58,7 +58,7 @@ const AboutMePage = () => {
                         </p>
                     </div>
                     {/* <img src="/thoen.jpg" alt="No Picture" /> */}
-                    <img data-aos="zoom-in-up" alt="Long Sreyly" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="mx-auto aspect-square overflow-hidden rounded-full object-cover object-center transition-transform hover:scale-105 w-[350px] md:w-[450px] color: transparent;" src="/sreyly.jpg" />
+                    <img data-aos="zoom-in-up" alt="srun lisa" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="mx-auto aspect-square overflow-hidden rounded-full object-cover object-center transition-transform hover:scale-105 w-[350px] md:w-[450px] color: transparent;" src="/srunlisa.jpg" />
                 </div>
             </section>
             {/* Enducation*/}
