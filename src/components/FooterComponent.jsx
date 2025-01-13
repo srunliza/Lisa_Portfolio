@@ -109,7 +109,7 @@ const FooterComponent = () => {
 						<li>
 							<Link
 								className="text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 hover:underline"
-								href="https://github.com/longsreyly"
+								href="https://github.com/srunliza" target="_blank"
 							>
 								<div class="flex items-center gap-2">
 									<svg
@@ -129,7 +129,7 @@ const FooterComponent = () => {
 						<li>
 							<Link
 								className="text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 hover:underline"
-								href="https://www.facebook.com/long.menglii.7?mibextid=LQQJ4d"
+								href="https://web.facebook.com/srun.liza/" target="_blank"
 							>
 								<div class="flex items-center gap-2">
 									<svg
@@ -149,7 +149,7 @@ const FooterComponent = () => {
 						<li>
 							<Link
 								className="text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 hover:underline"
-								href="https://www.linkedin.com/in/long-sreylik-993b7b241/"
+								href="https://www.linkedin.com/in/srun-lisa-719322270/" target="_blank"
 							>
 								<div class="flex items-center gap-2">
 									<svg
@@ -169,7 +169,7 @@ const FooterComponent = () => {
 						<li>
 							<Link
 								className="text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 hover:underline"
-								href=""
+								href="https://x.com/srunlisa" target="_blank"
 							>
 								<div class="flex items-center gap-2">
 									<svg

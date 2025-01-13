@@ -16,10 +16,10 @@ const ProjectPage = () => {
             paragraph: "A movie desing dynamic web page using ReactJs with Rest APIs."
         },
         {
-            image : "/cake.webp",
-            link: "https://domino-sreyly-long.vercel.app/index.html",
-            title: "Domino | Web Design",
-            paragraph: "A Domino design static page using HTML, CSS and Framwork Bootstrap."
+            image : "/kroya.png",
+            link: "https://drive.google.com/uc?id=1ZVSa-eBMHEf3KE2c4SYJJvLqlQFI7XYJ&export=download",
+            title: "Kroya | Android App",
+            paragraph: "The Kroya App is a dynamic application designed using Kotlin and Jetpack Compose, integrated with REST APIs"
         }
     ]
     return (

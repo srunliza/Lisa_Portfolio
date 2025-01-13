@@ -3,18 +3,18 @@ import Link from "next/link";
 const AchievementsPage = () => {
     const information = [
         {
-            image : "/cstad.png",
-            title : "Web Design ",
-            name : "Issued by CSTAD",
-            completed : "Completed 30,November 2023",
-            cridentail : ""       
-        },
-        {
             image : "/hrd.png",
             title : "Basic Course of IT  ",
             name : "Issued by Korean Software HRD Center",
-            completed : "Completed on 10,July 2024",
-            cridentail : ""          
+            completed : "Completed on 11,July 2024",
+            showImg : "https://drive.google.com/file/d/1OB3DyRh79PMeC4C6XgNRLOt6pej-zfvE/view?usp=drive_link"          
+        },
+        {
+            image : "/hrd.png",
+            title : "Advanced Course of IT  ",
+            name : "Issued by Korean Software HRD Center",
+            completed : "Completed on 05,December 2024",
+            showImg : "https://drive.google.com/file/d/1F9ylF6W2YSfBPigVDrin3qR4Aj7mzeFq/view?usp=drive_link"          
         },
         
     ]
@@ -47,7 +47,7 @@ const AchievementsPage = () => {
                                 <p className="text-sm text-gray-500 dark:text-gray-400">{data.name}</p>
                                 <p className="text-sm text-gray-500 dark:text-gray-400">{data.completed}</p>
                                 </div>
-                                <Link href={data.cridentail} className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-gray-900 underline-offset-4 hover:underline h-9 rounded-md px-3 mt-4">View Credentail</Link>
+                                <Link href={data.showImg} target="_blank" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-gray-900 underline-offset-4 hover:underline h-9 rounded-md px-3 mt-4">View Certificate</Link>
                             </div>                       
                     </div>
                     ))
