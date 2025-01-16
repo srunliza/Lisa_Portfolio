@@ -25,7 +25,7 @@ export default function Home() {
 						<h1 className="-mt-3 text-6xl font-medium max-w-4xl bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 bg-clip-text tracking-tighter text-transparent p-2">
 							<span className="typewriter ">
 								<TypeAnimation
-									sequence={["Web Developer", 1000, "UX/UI Design", 1000]}
+									sequence={["Web Developer", 1000, "Android Developer", 1000]}
 									wrapper="span"
 									speed={50}
 									style={{ fontSize: "1em", display: "inline-block" }}
