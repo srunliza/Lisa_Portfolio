@@ -1,60 +1,81 @@
+"use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const AchievementsPage = () => {
-    const information = [
+    const achievements = [
         {
-            image : "/hrd.png",
-            title : "Basic Course of IT  ",
-            name : "Issued by Korean Software HRD Center",
-            completed : "Completed on 11,July 2024",
-            showImg : "https://drive.google.com/file/d/1OB3DyRh79PMeC4C6XgNRLOt6pej-zfvE/view?usp=drive_link"          
+            image: "/hrd.png",
+            title: "Basic Course of IT",
+            name: "Korean Software HRD Center",
+            completed: "Completed on 11 July 2024",
+            showImg: "https://drive.google.com/file/d/1OB3DyRh79PMeC4C6XgNRLOt6pej-zfvE/view?usp=drive_link"          
         },
         {
-            image : "/hrd.png",
-            title : "Advanced Course of IT  ",
-            name : "Issued by Korean Software HRD Center",
-            completed : "Completed on 05,December 2024",
-            showImg : "https://drive.google.com/file/d/1F9ylF6W2YSfBPigVDrin3qR4Aj7mzeFq/view?usp=drive_link"          
+            image: "/hrd.png",
+            title: "Advanced Course of IT",
+            name: "Korean Software HRD Center", 
+            completed: "Completed on 05 December 2024",
+            showImg: "https://drive.google.com/file/d/1F9ylF6W2YSfBPigVDrin3qR4Aj7mzeFq/view?usp=drive_link"          
         },
-        
-    ]
+    ];
+
     return (
-        <main>
-            <section data-aos="fade-up"
-                data-aos-anchor-placement="top-center" className="w-full py-14">
-                <div className=" px-4 md:px-6">
-                    <div className="text-center flex flex-col gap-2 items-center justify-center h-[40vh]">
-                        <div className="space-y-2">
-                            <h1 className="text-5xl font-semibold">My Achievements</h1>
-                            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 pt-2">
-                                Here are some of the certifications and credentials I have earned over the years. I am always learning and growing to become a better developer.
-                            </p>
-                        </div>
-                    </div>
+        <main className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+            <section className="container mx-auto px-4 py-16 md:py-24">
+                <div className="text-center space-y-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+                        My Achievements
+                    </h1>
+                    <p className="max-w-2xl mx-auto text-gray-600 text-lg">
+                        A collection of certifications showcasing continuous learning 
+                        and professional growth in software development.
+                    </p>
                 </div>
             </section>
-            {/* Card Achievements */}
-            <section data-aos="fade-up"
-        data-aos-duration="3000" className="container m-auto w-full py-10 md:py-24 lg:py-30">
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-                  {
-                    information.map((data)=>(
-                        <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
-                        <div className="flex flex-col justify-between bg-white p-6 dark:bg-gray-950">               
-                            <div>
-                                <img alt="Issuing Organization" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" className="mb-4 h-12 w-12 rounded-full object-contain color: transparent; aspect-ratio: 50 / 50; object-fit: cover;" src={data.image}/>
-                                <h3 className="mb-2 text-lg font-bold">{data.title}</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">{data.name}</p>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">{data.completed}</p>
+
+            <section className="container mx-auto px-4 pb-16">
+                <div className="flex justify-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl">
+                        {achievements.map((achievement, index) => (
+                            <div 
+                                key={index}
+                                className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl text-center"
+                            >
+                                <div className="p-6 flex flex-col items-center h-full">
+                                    <div className="relative w-16 h-16 mb-4">
+                                        <Image 
+                                            src={achievement.image} 
+                                            alt="Certificate Logo"
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                                        {achievement.title}
+                                    </h3>
+                                    <p className="text-gray-600 mb-1">
+                                        {achievement.name}
+                                    </p>
+                                    <p className="text-gray-500 text-sm mb-4">
+                                        {achievement.completed}
+                                    </p>
+                                    <Link 
+                                        href={achievement.showImg} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-auto inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors"
+                                    >
+                                        View Certificate
+                                    </Link>
                                 </div>
-                                <Link href={data.showImg} target="_blank" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-gray-900 underline-offset-4 hover:underline h-9 rounded-md px-3 mt-4">View Certificate</Link>
-                            </div>                       
+                            </div>
+                        ))}
                     </div>
-                    ))
-                  }
                 </div>
             </section>
         </main>
-    )
+    );
 }
+
 export default AchievementsPage;

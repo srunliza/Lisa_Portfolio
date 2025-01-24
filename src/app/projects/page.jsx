@@ -1,70 +1,99 @@
-
+"use client";
+import { useState } from 'react';
 import Link from 'next/link';
-import React from 'react';
+import Image from 'next/image';
+
 const ProjectPage = () => {
-    const project = [
+    const [filter, setFilter] = useState('All');
+    const projects = [
         {
-            image : "/langNet.png",
+            category: 'Web',
+            image: "/langNet.png",
             link: "https://langnet.netlify.app/",
             title: "LangNet | Web Application",
             paragraph: "A LangNet design using NextJs with Rest APIs."
         },
         {   
-            image : "/movies.png",
+            category: 'Web',
+            image: "/movies.png",
             link: "https://movie-legend-24h.firebaseapp.com/",
-            title: "Movie  | Web Application",
-            paragraph: "A movie desing dynamic web page using ReactJs with Rest APIs."
+            title: "Movie | Web Application",
+            paragraph: "A movie design dynamic web page using ReactJs with Rest APIs."
         },
         {
-            image : "/kroya.png",
+            category: 'Mobile',
+            image: "/kroya.png",
             link: "https://drive.google.com/uc?id=1ZVSa-eBMHEf3KE2c4SYJJvLqlQFI7XYJ&export=download",
             title: "Kroya | Android App",
-            paragraph: "The Kroya App is a dynamic application designed using Kotlin and Jetpack Compose, integrated with REST APIs"
+            paragraph: "Dynamic application designed using Kotlin and Jetpack Compose"
         }
-    ]
+    ];
+
+    const filteredProjects = filter === 'All' 
+        ? projects 
+        : projects.filter(p => p.category === filter);
+
     return (
-        <main>
-            <section data-aos="fade-up"
-                data-aos-anchor-placement="top-center" className="w-full py-14 ">
-                <div className=" px-4 md:px-6 ">
-                    <div className="flex flex-col items-center space-y-4 text-center mt-20">
-                        <div className="space-y-2 ">
-                            <h1 className="text-5xl font-semibold ">My Personal Projects</h1>
-                            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 pt-2">
-                                Explore some of the projects I've worked on in the past. From custom web applications to mobile apps, I've done it all.
-                            </p>
-                        </div>
-                    </div>
+        <main className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+            <section className="container mx-auto px-4 py-16 md:py-24">
+                <div className="text-center space-y-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+                        My Personal Projects
+                    </h1>
+                    <p className="max-w-2xl mx-auto text-gray-600 text-lg">
+                        Innovative solutions spanning web and mobile platforms, 
+                        demonstrating versatility and technical expertise.
+                    </p>
                 </div>
             </section>
-            {/* Card Project */}
-            <section className="w-full pb-24">
-                <div className="container m-auto px-4 md:px-6">
-                    <div className="flex justify-between mb-6">
-                        <div className=" flex items-center gap-4">
-                            <label className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-semibold" htmlFor="filter">
-                                Filter by:
-                            </label>
-                            <button type="button" role="combobox" aria-controls="radix-:r0:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" class="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1 w-36"><span className="pointer-events: none;">All Categories</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-                        </div>
+
+            <section className="container mx-auto px-4 pb-16">
+                <div className="flex justify-center mb-10">
+                    <div className="flex items-center space-x-4">
+                        <span className="font-medium text-gray-700">Filter by:</span>
+                        <select 
+                            value={filter}
+                            onChange={(e) => setFilter(e.target.value)}
+                            className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"
+                        >
+                            <option value="All">All Categories</option>
+                            <option value="Web">Web</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
                     </div>
-                    {/* card */}
-                    <div data-aos="zoom-in-right" className='grid gap-2 md:grid-cols-2 lg:grid-cols-3 w-70'>
-                        {
-                            project.map((data) => (
-                                <div class="w-60 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
-                                    <Link className="absolute inset-0 z-10" href={data.link} target='_blank' rel="noopener noreferrer">
-                                        <span className="sr-only">View Project</span>
-                                    </Link>
-                                    <img  className="object-cover w-60 h-50 md:h-52 lg:h-56 group-hover:scale-105 transition-all duration-300 color: transparent; aspect-ratio: 600 / 400; object-fit: cover;" alt="No Picture" loading="lazy" decoding="async" data-nimg="1"  src={data.image}/>
-                                    <div className="bg-white p-4 dark:bg-gray-950">
-                                        <h3 className="font-semibold text-lg md:text-xl">{data.title}</h3>
-                                        <p className="text-sm text-gray-500 dark:text-gray-400">{data.paragraph}</p>
-                                    </div>
+                </div>
+
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center">
+                    {filteredProjects.map((project, index) => (
+                        <div 
+                            key={index}
+                            className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                        >
+                            <Link 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="block"
+                            >
+                                <div className="relative w-full h-56 overflow-hidden">
+                                    <Image 
+                                        src={project.image} 
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                    />
                                 </div>
-                            ))
-                        }
-                    </div>
+                                <div className="p-6">
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                                        {project.title}
+                                    </h3>
+                                    <p className="text-gray-600">
+                                        {project.paragraph}
+                                    </p>
+                                </div>
+                            </Link>
+                        </div>
+                    ))}
                 </div>
             </section>
         </main>
